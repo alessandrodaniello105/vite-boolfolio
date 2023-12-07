@@ -23,7 +23,7 @@
 <template>
 
   <h1>Lista Progetti</h1>
-  <ul>
+  <ul class="projects-list">
     <li v-for="project in store.projects" :key="project.id">
       <span>{{project.title}}</span>
     </li>
@@ -31,6 +31,13 @@
 
 </template>
 
-<style>
+<style lang="scss" scoped>
+
+ul.projects-list {
+  margin: 20px 0;
+  li {
+    margin-bottom: 5px;
+  }
+}
 
 </style>
