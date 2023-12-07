@@ -1,0 +1,12 @@
+ul {
+  text-align: center;
+  list-style: none;
+  width: 700px;
+  height: 30px;
+  margin: 0 auto;
+  li {
+    display: inline-block;
+    margin-right: 8px;
+    line-height: 30px;
+  }
+}
