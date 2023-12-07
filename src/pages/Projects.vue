@@ -10,7 +10,9 @@
     name: 'Projects',
 
     data() {
-      return {}
+      return {
+        store
+      }
     },
 
     components: {
@@ -21,7 +23,7 @@
       getApi(url){
         axios.get(url)
           .then(res => {
-            console.log(res.data);
+            this.store.projects = res.data
           })
       }
     },
