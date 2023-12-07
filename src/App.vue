@@ -1,5 +1,7 @@
 <script>
-  import { RouterLink, RouterView } from 'vue-router'
+  // import { RouterLink, RouterView } from 'vue-router'
+
+  import Header from './components/partials/Header.vue'
   
   import HelloWorld from './components/HelloWorld.vue'
   import axios from 'axios'
@@ -14,7 +16,8 @@
     },
 
     components: {
-      HelloWorld
+      HelloWorld,
+      Header
     },
 
     methods: {
@@ -37,9 +40,15 @@
 </script>
 
 <template>
+  
+  <Header />
 
   <div class="main-wrapper">
-    <HelloWorld />
+    <div class="container">
+
+      <RouterView />
+    
+    </div>
   </div>
 
 </template>
