@@ -20,20 +20,11 @@
       Header
     },
 
-    methods: {
-      getApi(url){
-        axios.get(url)
-          .then(res => {
-            console.log(res.data);
-          })
-      }
-    },
+    methods: {},
 
     computed: {},
 
-    mounted() {
-      this.getApi(store.apiUrl + 'projects');
-    }
+    mounted() {}
     
   }
 
