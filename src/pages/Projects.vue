@@ -2,7 +2,7 @@
 
   import axios from 'axios';
   import { store } from '../data/store.js'
-  import ProjectComponent from '@/components/ProjectComponent.vue'
+  import ProjectList from '@/components/ProjectsList.vue'
 
 
   export default {
@@ -16,7 +16,7 @@
     },
 
     components: {
-      ProjectComponent
+      ProjectList
     },
 
     methods: {
@@ -40,7 +40,7 @@
 
 <template>
 
-  <ProjectComponent />
+  <ProjectList />
 
 </template>
 
