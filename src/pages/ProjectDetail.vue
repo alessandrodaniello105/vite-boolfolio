@@ -17,7 +17,13 @@
       getProject(slug) {
         axios.get(store.apiUrl + 'projects/' + slug)
           .then(res => {
-            this.project = res.data;
+            if(!res.data.success){
+              this.$router.push({name: 'error404'})
+            } else {
+              this.project = res.data.project;
+            }
+            
+            
           })
       }
     },
