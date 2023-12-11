@@ -1,6 +1,7 @@
 <script>
   import axios from 'axios'
   import { store } from '../data/store.js'
+  import Loader from '../components/partials/Loader.vue'
 
   export default {
 
@@ -8,21 +9,27 @@
 
     data() {
       return {
-        project: {}
+        project: {},
+        isLoaded: false
       }
     },
 
+    components: {
+      Loader
+    },
 
     methods: {
       getProject(slug) {
         axios.get(store.apiUrl + 'projects/' + slug)
           .then(res => {
             if(!res.data.success){
-              this.$router.push({name: 'error404'})
+              this.$router.push({name: 'error404'});
             } else {
               this.project = res.data.project;
+              this.project.imagePath = res.data.absImagePath;
             }
             
+            this.isLoaded = true;
             
           })
       }
@@ -44,10 +51,13 @@
 
 <template>
 
-  <div class="card">
+  <Loader :title="'Titolo test'" v-if="!isLoaded" />
+  <div v-else class="card">
     <h2>{{ project.title }}</h2>
     <p>Descrizione: {{ project.description }}</p>
     <p>Tipo: {{ project.type?.name ?? 'Nessun tipo' }} | {{ technologiesList }}</p>
+
+    <img :src="project.imagePath" :alt="project.image_original_name">
   </div>
 
 </template>
