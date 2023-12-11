@@ -4,6 +4,7 @@
   import { store } from '../data/store.js'
   import ProjectList from '@/components/ProjectsList.vue'
 
+  import Loader from '../components/partials/Loader.vue'
 
   export default {
 
@@ -11,19 +12,22 @@
 
     data() {
       return {
-        store
+        store,
+        isLoaded: false
       }
     },
 
     components: {
-      ProjectList
+      ProjectList,
+      Loader
     },
 
     methods: {
       getApi(url){
         axios.get(url)
           .then(res => {
-            this.store.projects = res.data
+            this.store.projects = res.data;
+            this.isLoaded = true;
           })
       }
     },
@@ -40,7 +44,9 @@
 
 <template>
 
-  <ProjectList />
+  <Loader v-if="!isLoaded" />
+
+  <ProjectList v-else />
 
 </template>
 
