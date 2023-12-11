@@ -26,7 +26,6 @@
               this.$router.push({name: 'error404'});
             } else {
               this.project = res.data.project;
-              this.project.imagePath = res.data.absImagePath;
             }
             
             this.isLoaded = true;
@@ -57,7 +56,7 @@
     <p>Descrizione: {{ project.description }}</p>
     <p>Tipo: {{ project.type?.name ?? 'Nessun tipo' }} | {{ technologiesList }}</p>
 
-    <img :src="project.imagePath" :alt="project.image_original_name">
+    <img :src="project.image" :alt="project.image_original_name">
   </div>
 
 </template>
