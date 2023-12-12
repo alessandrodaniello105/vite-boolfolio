@@ -46,8 +46,8 @@
 </template>
 
 <style lang="scss" scoped>
-  .container {
+  /* .container {
     padding: 20px;
-  }
+  } */
 </style>
 <!-- ./components/data/store.js./data/store.js -->
