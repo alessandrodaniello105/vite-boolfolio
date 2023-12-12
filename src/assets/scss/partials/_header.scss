@@ -1,12 +1,21 @@
 nav {
+  padding: 20px;
+  a {
+    text-decoration: none;
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: var(--text-headline);
+  }
   ul {
     text-align: center;
     list-style: none;
     width: 700px;
     height: 30px;
     margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
     li {
-      display: inline-block;
+      // display: inline-block;
       margin-right: 8px;
       line-height: 30px;
     }
