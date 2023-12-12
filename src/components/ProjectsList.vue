@@ -24,7 +24,7 @@
 
   <h1 class="title">Lista Progetti</h1>
 
-  <ul class="projects-list">
+  <!-- <ul class="projects-list">
     
     <li v-for="project in store.projects" :key="project.id">
       <router-link :to="{name:'project-detail', params:{slug: project.slug}}">
@@ -32,7 +32,7 @@
       </router-link>
     </li>
     
-  </ul>
+  </ul> -->
 
 <div class="table-container">
   <table class="styled-table">
@@ -49,17 +49,28 @@
     </thead>
 
     <tbody>
-
       
       <tr v-for="project in store.projects" :key="project.id" class="active-row">
-          <td>{{ project.id }}</td>
-          <td>{{ project.title }}</td>
-          <td>{{ project.type?.name ?? 'Nessun tipo' }}</td>
-          <td v-if="project.technologies.length > 0">{{ project.technologies.map(element => {
-            return element.name
-          }).join(', ') }}</td>
-          <td v-else>Nessuna categoria</td>
-          <!-- <td> <span v-for="technology in project.technology" :key="technology.id"> {{ technology?.name }}</span></td> -->
+
+        <!-- ID -->
+        <td>{{ project.id }}</td>
+
+        <!-- PROJECT TITLE AS ROUTER LINK -->
+        <td>
+          <router-link :to="{name:'project-detail', params:{slug: project.slug}}">
+            <span>{{project.title}}</span>
+          </router-link>
+        </td>
+
+        <!-- TYPE -->
+        <td>{{ project.type?.name ?? 'Nessun tipo' }}</td>
+
+        <!-- TECHNOLOGIES -->
+        <td v-if="project.technologies.length > 0">{{ project.technologies.map(element => {
+          return element.name
+        }).join(', ') }}</td>
+        <td v-else>Nessuna categoria</td>
+          
       </tr>
 
     </tbody>
@@ -102,11 +113,12 @@ ul.projects-list {
     }
     tbody {
       tr {
-        color: var(--text-paragraph);
         border-bottom: 1px solid #dddddd;
         &:nth-of-type(even) {
           background-color: #f3f3f3;
-          color: var(--button-text);
+          a {
+            color: var(--button-text);
+          }
         }
         &:last-of-type {
           border-bottom: 2px solid #009879;
@@ -115,6 +127,12 @@ ul.projects-list {
           font-weight: bold;
           color: #009879;
         } */
+      }
+      td {
+        a {
+          text-decoration: none;
+          color: var(--text-paragraph);
+        }
       }
     }
   }
