@@ -44,12 +44,19 @@
 
 <template>
 
-  <Loader v-if="!isLoaded" />
+  <div class="centerator">
+    <Loader v-if="!isLoaded" />
+    <ProjectList v-else />
+  </div>
 
-  <ProjectList v-else />
 
 </template>
 
-<style>
-
+<style lang="scss" scoped>
+.centerator {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
 </style>
