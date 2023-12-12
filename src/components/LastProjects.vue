@@ -22,7 +22,7 @@
 
 <template>
 
-  <h1>Ultimi Progetti</h1>
+  <h1 class="title">Ultimi Progetti</h1>
   <div class="projects-wrapper">
     <div class="project" v-for="project in list" :key="project.id">
       <h1>{{ project.title }}</h1>
@@ -34,7 +34,7 @@
       <div class="text-box">
         <p>{{ project.description }}</p>
 
-        //TODO: migliorare visualizzazione link
+        <!-- //TODO: migliorare visualizzazione link -->
         <span>Link al progetto: <a :href="project.link ?? '#'">{{ project.link ?? 'Nessun link al progetto' }}</a> </span>
         <!-- <span v-else>Link al progetto:  </span> -->
       </div>
@@ -62,15 +62,7 @@
       width: 100%;
     }
   }
-  .text-box {
-    color: var(--text-paragraph);
-    p {
-      font-size: 2rem;
-    }
-    span {
-      font-size: 1rem;
-    }
-  }
+  
 }
 
 </style>
