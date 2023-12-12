@@ -12,13 +12,15 @@
     components: {
       axios,
       Loader,
-      LastProjects
+      LastProjects,
+      
     },
 
     data() {
       return {
         store,
-        isLoaded: false
+        isLoaded: false,
+        lastProjects: []
       }
     },
 
@@ -26,7 +28,12 @@
       getApi(url){
         axios.get(url)
           .then(res => {
-            this.store.projects = res.data;
+            if(!res.data.success){
+              this.$router.push({name: 'error404'});
+            } else {
+              console.log(res.data.last_projects);
+              this.lastProjects = res.data.last_projects;
+            }
             this.isLoaded = true;
           })
       }
@@ -42,13 +49,27 @@
 
 <template>
 
-  <h1>Home Page</h1>
+  <!-- <h1>Home Page</h1> -->
+
+  <div class="jumbotron">
+    <img src="/public/imgs/jumbotron.jpg" alt="">
+  </div>
 
   <Loader v-if="!isLoaded" />
-  <LastProjects v-else />
+  <LastProjects :list="lastProjects" v-else />
 
 </template>
 
-<style>
-
+<style lang="scss" scoped>
+.jumbotron {
+  max-width: 100vw;
+  height: 400px;
+  overflow: hidden;
+  img {
+    width: 100%;
+    object-fit: cover;
+    position: relative;
+    bottom: 200px;
+  }
+}
 </style>
