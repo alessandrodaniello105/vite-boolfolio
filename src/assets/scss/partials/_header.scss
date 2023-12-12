@@ -7,17 +7,12 @@ nav {
     color: var(--text-headline);
   }
   ul {
+    display: flex;
     text-align: center;
     list-style: none;
     width: 700px;
-    height: 30px;
     margin: 0 auto;
-    display: flex;
     justify-content: space-between;
-    li {
-      // display: inline-block;
-      margin-right: 8px;
-      line-height: 30px;
-    }
+
   }
 }
