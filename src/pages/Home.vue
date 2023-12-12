@@ -51,12 +51,18 @@
 
   <!-- <h1>Home Page</h1> -->
 
-  <div class="jumbotron">
-    <img src="/public/imgs/jumbotron.jpg" alt="">
+  <div v-if="!isLoaded" class="centerator">
+    <Loader  />
   </div>
 
-  <Loader v-if="!isLoaded" />
-  <LastProjects :list="lastProjects" v-else />
+  <div v-else class="wrapper">
+    <div class="jumbotron">
+      <img src="/public/imgs/jumbotron.jpg" alt="">
+    </div>
+
+    <LastProjects :list="lastProjects" />
+  </div>
+
 
 </template>
 
@@ -71,5 +77,12 @@
     position: relative;
     bottom: 200px;
   }
+}
+
+.centerator {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 </style>
