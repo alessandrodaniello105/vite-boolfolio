@@ -5,6 +5,8 @@ import Projects from '../pages/Projects.vue'
 import ProjectDetail from '../pages/ProjectDetail.vue'
 import About from '../pages/About.vue'
 import Contacts from '../pages/Contacts.vue'
+import TestPage from '../pages/TestPage.vue'
+
 import Error404 from '../pages/Error404.vue'
 
 const router = createRouter({
@@ -34,6 +36,11 @@ const router = createRouter({
       path: '/contatti',
       name: 'contacts',
       component: Contacts
+    },
+    {
+      path: '/test-tailwind',
+      name: 'testPage',
+      component: TestPage
     },
     {
       path: '/:pathMatch(.*)*',

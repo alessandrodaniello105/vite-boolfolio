@@ -32,6 +32,9 @@
       <li>
         <router-link :to="{name: 'contacts'}">CONTATTI</router-link>
       </li>
+      <li>
+        <router-link :to="{name: 'testPage'}">TEST TAILWIND</router-link>
+      </li>
     </ul>
   </nav>
 
