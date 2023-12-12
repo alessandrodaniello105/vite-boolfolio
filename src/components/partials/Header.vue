@@ -18,7 +18,7 @@
 
 <template>
 
-  <nav>
+  <nav id="header">
     <ul>
       <li>
         <router-link :to="{name: 'home'}">HOME</router-link>

@@ -20,11 +20,22 @@
       Header
     },
 
-    methods: {},
+    methods: {
+      getStart() {
+        const header = document.getElementById('header');
+
+        setTimeout(() => {
+          header.style.opacity = "1";
+
+        }, 200);
+      }
+    },
 
     computed: {},
 
-    mounted() {}
+    mounted() {
+      this.getStart();
+    }
     
   }
 
