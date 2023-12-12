@@ -1,3 +1,12 @@
+:root {
+  --background-primary: #004643;
+  --text-headline: #fffffe;
+  --text-paragraph: #abd1c6;
+  --button-primary: #f9bc60;
+  --button-text: #001e1d;
+
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -5,7 +14,9 @@
 }
 
 body {
-  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  // font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  background-color: var(--background-primary);
+
 }
 
 ul {
