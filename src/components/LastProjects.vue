@@ -35,8 +35,8 @@
         <p>{{ project.description }}</p>
 
         <!-- //TODO: migliorare visualizzazione link -->
-        <span>Link al progetto: <a :href="project.link ?? '#'">{{ project.link ?? 'Nessun link al progetto' }}</a> </span>
-        <!-- <span v-else>Link al progetto:  </span> -->
+        <span v-if="project.link">Link al progetto: <a :href="project.link">{{ project.link}}</a> </span>
+        <span v-else>Link al progetto: Nessun link al progetto </span>
       </div>
     </div>
   </div>
